@@ -1,11 +1,11 @@
 package transport;
 
+public class Track extends Transport implements Competing {
 
-public class Car extends Transport implements Competing {
-    public Car(String brand, String model, double engineVolume) {
+
+    public Track(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
-
     @Override
     public void start() {
         System.out.println("Автомобиль \"" +getBrand() +"\" (\""+ getModel() +"\") начал движение");
@@ -19,18 +19,22 @@ public class Car extends Transport implements Competing {
     }
     @Override
     public void pitStop() {
-        System.out.println(" Автомобиль прошел пит-стоп");
+        System.out.println("Грузовик прошел пит-стоп");
     }
 
     @Override
     public int bestTimeLap() {
-        return (int) (Math.random() * 4);
+        System.out.println();
+        return (int) (Math.random() * 8);
 
     }
 
     @Override
     public int maxSpeed() {
-        return (int) (Math.random() * 300);
+        return (int) (Math.random() * 200);
 
     }
+
+
 }
+
